@@ -1,0 +1,96 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+.features {
+
+    .container {
+        padding-right: 6.4%;
+        padding-left: 6.4%;
+        margin-bottom: 76px;
+        text-align: center;
+
+        @include breakpoint(tablet) {
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include breakpoint(desktop) {
+            padding:0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    article{
+        margin-bottom: 64px;
+        
+        @include breakpoint(tablet) {
+            margin-bottom: 72px;
+            text-align: left;
+            max-width: 405%;
+        }
+
+        @include breakpoint(desktop) {
+            flex-grow: 1;
+            max-width: 24%;
+        }
+    }
+
+    &__icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65px;
+        height: 65px;
+        border-radius: 16px;
+        background-color: $color-orange;
+        margin-bottom: 48px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 48px;
+
+        @include breakpoint(tablet) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        img {
+            width: 20px;
+        }
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 28px;
+        color: $color-black;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        padding: 0 20%;
+
+        @include breakpoint(tablet) {
+            padding-left: 0;
+            padding-right: 52%;
+        }
+
+        @include breakpoint(desktop) {
+            padding-right: 40%;
+        }
+    }
+
+    &__subject {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 26px;
+        color: $color-gray;
+        padding: 0 5%;
+
+        @include breakpoint(tablet) {
+            padding-left: 0;
+            padding-right: 18%;
+        }
+    }
+}

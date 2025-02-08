@@ -1,0 +1,26 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+footer {
+
+    .container {
+        padding: 20px 6.4%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoint(tablet) {
+            padding-bottom: 40px;
+        }
+    }
+
+    .footer {
+        font-size: 16px;
+        font-weight: 700;
+        color: $color-gray;
+
+        &__higlight {
+            font-weight: 400;
+        }
+    }
+}

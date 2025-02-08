@@ -1,0 +1,56 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+.navigation {
+
+    .container {
+        margin-top: 23px;
+        padding-left: 6.4%;
+        padding-right: 6.4%;
+        margin-bottom: 64px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include breakpoint(tablet) {
+            margin-top: 40px;
+            margin-bottom: 62px;
+        }
+
+        @include breakpoint(desktop) {
+            margin-top: 55px;
+            margin-bottom: 83px;
+            padding: 0;
+        }
+
+        .logo {
+           display: flex;
+            align-items: center;
+
+            &__img {
+                width: 100%;
+            }
+        }
+
+        ul {
+            @include reset-list();
+        }
+
+       a.button {
+            @include button();
+
+            &-gray {
+                background-color: $color-gray-light;
+                color: black;
+                text-transform: uppercase;
+                font-size: 16px;
+                font-weight: 700;
+
+                &:hover {
+                    background-color: $color-black;
+                    color: white;
+                }
+            }
+        }
+    }
+}

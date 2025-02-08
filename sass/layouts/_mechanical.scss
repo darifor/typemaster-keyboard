@@ -1,0 +1,120 @@
+@use '../mixins' as *;
+@use '../variables' as *;
+
+.mechanical {
+
+    .container {
+        padding-right: 6.4%;
+        padding-left: 0;
+        margin-bottom: 110px;
+
+        @include breakpoint(tablet) {
+            padding-left: 6.4%;
+        }
+
+        @include breakpoint(desktop) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+    }
+
+    &__images {
+        display: flex;
+        gap: 24px;
+        height: 193px;
+        margin-bottom: 75px;
+
+        @include breakpoint(tablet) {
+            height: 320px;
+            gap: 30px;
+        }
+
+        @include breakpoint(desktop) {
+            height: 480px;
+            margin-bottom: 0;
+            min-width: 72%;
+        }
+
+        img.left {
+            width: 32%;
+            height: 100%;
+            object-fit: cover;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+
+            @include breakpoint(tablet) {
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+
+            @include breakpoint(desktop) {
+                width: auto;
+            }
+        }
+
+        img.right {
+            width: 65%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    }
+
+    &__content {
+        padding-left: 6.8%;
+        text-align: center;
+
+        @include breakpoint(tablet) {
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+            gap: 10%;
+        }
+
+        @include breakpoint(desktop) {
+            display: flex;
+            flex-direction: column;
+            //flex-grow: 1;
+        }
+
+        @include breakpoint(desktop) {
+            padding-left: 6.8%;
+        }
+
+        h2 {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 36px;
+            color: $color-black;
+            text-transform: uppercase;
+            padding: 0 6.83%;
+            margin-bottom: 24px;
+
+            @include breakpoint(tablet) {
+                padding: 0;
+                text-align: left;
+                margin-bottom: 0;
+            }
+
+            @include breakpoint(desktop) {
+                margin-bottom: 27px;
+            }
+
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 26px;
+            color: $color-gray;
+            padding: 0 6.83%;
+
+            @include breakpoint(tablet) {
+                padding: 0;
+                text-align: left;
+            }
+        }
+    }
+}
